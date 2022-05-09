@@ -78,7 +78,8 @@ const loadEvent = (param1) => {
 
     rootEl.addEventListener('click', function (event) {
         console.log(event.currentTarget);
-        event.currentTarget.insertAdjacentHTML('beforeend', "Clicked,")
+        event.currentTarget.insertAdjacentHTML('beforeend', "Clicked, ");
+        event.currentTarget.classList.toggle('green');
     });
 };
 
