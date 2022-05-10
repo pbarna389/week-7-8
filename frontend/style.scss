@@ -1,47 +1,56 @@
-#menu-btn {
-  position: fixed;
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ccc;
 
-  width: 60px;
-  height: 60px;
+  #menu-btn {
+    position: fixed;
 
-  top: 0;
-  right: 0;
+    width: 60px;
+    height: 60px;
 
-  background-color: black;
+    top: 0;
+    right: 0;
 
-  &::before,
-  &::after {
-    content: "";
+    background-color: black;
 
-    width: 40px;
-    height: 4px;
+    &::before,
+    &::after {
+      content: "";
 
-    right: 10px;
+      position: absolute;
 
+      width: 40px;
+      height: 4px;
+
+      right: 10px;
+
+      background-color: white;
+
+      transition: top 400ms, transform 400ms;
+    }
+
+    &::before {
+      top: 24px;
+    }
+
+    &::after {
+      top: 35px;
+    }
+  }
+
+  &.menu-opened {
     background-color: white;
-  }
+    #menu-btn {
+      &::before {
+        top: 28px;
+        transform: rotate(45deg);
+      }
 
-  &::before {
-    position: absolute;
-    top: 24px;
-    transition: top 2s ease-in-out;
-  }
-
-  &::after {
-    position: absolute;
-    top: 35px;
-    transition: top 2s ease-in-out;
-  }
-
-  &:hover::before {
-    top: 11px;
-  }
-
-  &:hover::after {
-    top: 49px;
-  }
-
-  &.clicked {
-    background-color: gray;
+      &::after {
+        top: 28px;
+        transform: rotate(-45deg);
+      }
+    }
   }
 }

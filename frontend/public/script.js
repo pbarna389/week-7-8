@@ -7,13 +7,17 @@ const menuButtonComponent = () => {
 
 const loadEvent = () => {
     const rootEl = document.querySelector('#root');
+    // console.log(rootEl.parentElement)
 
     rootEl.insertAdjacentHTML('beforeend', menuButtonComponent());
 
     const menuButtonEl = document.querySelector('#menu-btn');
 
     menuButtonEl.addEventListener('click', function (event) {
-        event.currentTarget.classList.toggle('clicked');
+        // event.currentTarget.classList.toggle('clicked');
+        // rootEl.classList.toggle('white-backg');
+        console.log(event.currentTarget.parentElement);
+        event.currentTarget.closest("#root").classList.toggle('menu-opened');
     });
 };
 

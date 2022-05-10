@@ -1,4 +1,10 @@
-#menu-btn {
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ccc;
+}
+
+#root #menu-btn {
   position: fixed;
   width: 60px;
   height: 60px;
@@ -7,37 +13,40 @@
   background-color: black;
 }
 
-#menu-btn::before, #menu-btn::after {
+#root #menu-btn::before, #root #menu-btn::after {
   content: "";
+  position: absolute;
   width: 40px;
   height: 4px;
   right: 10px;
   background-color: white;
+  -webkit-transition: top 400ms, -webkit-transform 400ms;
+  transition: top 400ms, -webkit-transform 400ms;
+  transition: top 400ms, transform 400ms;
+  transition: top 400ms, transform 400ms, -webkit-transform 400ms;
 }
 
-#menu-btn::before {
-  position: absolute;
+#root #menu-btn::before {
   top: 24px;
-  -webkit-transition: top 2s ease-in-out;
-  transition: top 2s ease-in-out;
 }
 
-#menu-btn::after {
-  position: absolute;
+#root #menu-btn::after {
   top: 35px;
-  -webkit-transition: top 2s ease-in-out;
-  transition: top 2s ease-in-out;
 }
 
-#menu-btn:hover::before {
-  top: 11px;
+#root.menu-opened {
+  background-color: white;
 }
 
-#menu-btn:hover::after {
-  top: 49px;
+#root.menu-opened #menu-btn::before {
+  top: 28px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
-#menu-btn.clicked {
-  background-color: gray;
+#root.menu-opened #menu-btn::after {
+  top: 28px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 /*# sourceMappingURL=style.css.map */
