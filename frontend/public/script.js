@@ -17,6 +17,8 @@ const loadEvent = () => {
         // event.currentTarget.classList.toggle('clicked');
         // rootEl.classList.toggle('white-backg');
         console.log(event.currentTarget.parentElement);
+        console.log(event.currentTarget.closest('#root'))
+
         event.currentTarget.closest("#root").classList.toggle('menu-opened');
     });
 };
