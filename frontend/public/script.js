@@ -44,25 +44,30 @@ const loadEvent = () => {
 
     let beerSections = "";
     let beerCards = beers.cards;
-    for (const element of beers.cards) {
-        beerSections += beerSectionComponent(element.title, element.sub, element.text);
-    };
+    // for (const element of beers.cards) {
+    //     beerSections += beerSectionComponent(element.title, element.sub, element.text);
+    // };
+
+    beerCards.forEach((element, index) =>
+        beerSections += beerSectionComponent(element.title, element.sub, element.text, `0${index + 1}`)
+    );
 
     rootEl.insertAdjacentHTML('beforeend', beerSections);
 
     let beerAnchors = "";
-    for (const element of beers.cards) {
-        beerAnchors += beerAnchorComponent(element.title);
-    };
+    // for (const element of beers.cards) {
+    //     beerAnchors += beerAnchorComponent(element.title);
+    // };
+
+    beerCards.forEach((element, index) =>
+        beerAnchors += beerAnchorComponent(element.title, `0${index + 1}`)
+    );
 
     rootEl.insertAdjacentHTML('beforeend', beerNavComponent(beerAnchors));
 };
 
 window.addEventListener('load', loadEvent);
 
-    // beerCards.forEach((element, index) =>
-    //     beerSections += beerSectionComponent(element.title, element.sub, element.text, `0${index + 1}`)
-    // );
 
     // !!!!Ez is egy anonym-function - a végére kell a meghíváshoz ()!!!!
     // (function () {

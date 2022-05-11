@@ -53,8 +53,6 @@
 
 #root.menu-opened nav {
   right: 0;
-  -webkit-transition: right 500ms;
-  transition: right 500ms;
 }
 
 section {
