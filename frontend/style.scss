@@ -68,7 +68,7 @@ section {
 }
 
 nav {
-  // right: -300px, ha megkapja a menu-opened classnevet, akkor mindez animálódjon.
+  // right: -300px, ha megkapja a menu-opened classnevet, akkor mindez animálódjon right: 0-ra.
   // !!querySelector querySelectorAll for átnézése!!
 
   position: fixed;
