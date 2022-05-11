@@ -14,6 +14,8 @@
 
     background-color: black;
 
+    z-index: 999;
+
     &::before,
     &::after {
       content: "";
@@ -53,5 +55,42 @@
         transform: rotate(-45deg);
       }
     }
+
+    nav {
+      right: 0;
+      transition: right 500ms;
+    }
+  }
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+nav {
+  // right: -300px, ha megkapja a menu-opened classnevet, akkor mindez animálódjon.
+  // !!querySelector querySelectorAll for átnézése!!
+
+  position: fixed;
+
+  width: 200px;
+  height: 100vh;
+
+  top: 0;
+  right: -300px;
+
+  background: black;
+  color: white;
+
+  padding: 40px;
+
+  transition: right 500ms;
+
+  z-index: 99;
+
+  a {
+    display: block;
+    margin-bottom: 20px;
   }
 }

@@ -11,6 +11,7 @@
   top: 0;
   right: 0;
   background-color: black;
+  z-index: 999;
 }
 
 #root #menu-btn::before, #root #menu-btn::after {
@@ -48,5 +49,35 @@
   top: 28px;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+#root.menu-opened nav {
+  right: 0;
+  -webkit-transition: right 500ms;
+  transition: right 500ms;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+nav {
+  position: fixed;
+  width: 200px;
+  height: 100vh;
+  top: 0;
+  right: -300px;
+  background: black;
+  color: white;
+  padding: 40px;
+  -webkit-transition: right 500ms;
+  transition: right 500ms;
+  z-index: 99;
+}
+
+nav a {
+  display: block;
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=style.css.map */
